@@ -1,0 +1,17 @@
+{
+  "name": "485/adviseit",
+  "authors": [
+    {
+      "name": "Dahlia Adams",
+      "email": "adams.dahlia@student.greenriver.edu"
+    },
+    {
+      "name": "David Kurilla",
+      "email": "kurilla.david@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master",
+    "twbs/bootstrap": "5.3.2"
+  }
+}
