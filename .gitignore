@@ -1,0 +1,7 @@
+# Ignored Directories
+tmp/
+vendor/
+
+# Ignored Files
+.htaccess
+composer.lock
