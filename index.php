@@ -54,5 +54,13 @@ $f3->route('GET /preferences', function() {
     $view = new Template();
     echo $view->render('app/views/preferences.html');
 });
+
+// Define add route
+$f3->route('GET /add', function() {
+    $view = new Template();
+    echo $view->render('app/views/add.html');
+});
+
+
 // Run Fat Free Framework
 $f3->run();
