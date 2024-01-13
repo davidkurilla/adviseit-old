@@ -61,6 +61,17 @@ $f3->route('GET /add', function() {
     echo $view->render('app/views/add.html');
 });
 
+// Define add route
+$f3->route('GET /student', function() {
+    $view = new Template();
+    echo $view->render('app/views/student.html');
+});
+
+// Define add route
+$f3->route('GET /advisor', function() {
+    $view = new Template();
+    echo $view->render('app/views/advisor.html');
+});
 
 // Run Fat Free Framework
 $f3->run();
