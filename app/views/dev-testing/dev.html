@@ -1,0 +1,61 @@
+<include href="app/views/templates/header.html"></include>
+<include href="app/views/templates/navbar.html"></include>
+<div class="container-fluid p-3">
+    <div class="container-lg">
+        <h1>Dev Control Panel</h1>
+        <div class="accordion accordion-flush" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Add Class
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>Add Class</h1>
+                        <form action="{{@BASE}}/dev-testing/add" method="post">
+                            <label for="addClassTitle">Class Title</label>
+                            <input id="addClassTitle" class="form-control mb-3" type="text" name="title">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Update Class
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>Update Class</h1>
+                        <form>
+                            <label for="getClassTitle">Class Title</label>
+                            <input id="getClassTitle" class="form-control mb-3" type="text" name="title">
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Delete Class
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h1>Delete Class</h1>
+                        <form>
+                            <label for="deleteClassTitle">Class Title</label>
+                            <input id="deleteClassTitle" class="form-control mb-3" type="text" name="title">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include href="app/views/templates/footer.html"></include>
