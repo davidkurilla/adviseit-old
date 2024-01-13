@@ -2,9 +2,9 @@
 <include href="app/views/templates/navbar.html"></include>
 <div class="container">
     <h1>Add New Class</h1>
-    <form>
-        <label>Class Title</label>
-        <input class="form-control mb-3" type="text">
+    <form action="{{@BASE}}/dev-testing/new-course-submitted" method="post">
+        <label for="classTitle">Class Title</label>
+        <input id="classTitle" class="form-control mb-3" type="text" name="title">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
