@@ -1,3 +1,20 @@
 <include href="app/views/templates/header.html"></include>
-<h1>Hello, world!</h1>
+<include href="app/views/templates/navbar.html"></include>
+<div class="container-fluid">
+    <h1>Welcome to AdviseIT</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class ="row justify-content-center">
+
+        <div class="col-4">
+            <a class="btn btn-primary btn-lg" href="{{@BASE}}/student">I'm a student</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-primary btn-lg" href="{{@BASE}}/advisor">I'm an advisor</a>
+        </div>
+    </div>
+</div>
 <include href="app/views/templates/footer.html"></include>
