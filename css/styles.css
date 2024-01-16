@@ -1,0 +1,9 @@
+.graphit-logo-yellow {
+    border-color: #E4F577;
+    color: #E4F577;
+}
+
+.graphit-logo-yellow:hover {
+    background-color: #E4F577;
+    color: black;
+}
