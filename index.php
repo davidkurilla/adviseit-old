@@ -27,6 +27,10 @@ $f3->route('GET /courses/all', function($f3)
 
 // Define addCourse Route
 $f3->route('POST /dev-testing/add', function($f3) {
+    
+}
+// Define dev-testing route
+$f3->route('POST /submit', function($f3) {
 
     $raw = $_POST["title"];
     $f3->set('title', $raw);
