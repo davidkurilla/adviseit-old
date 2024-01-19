@@ -66,9 +66,14 @@ $f3->route('GET /advisor', function() {
 });
 
 // Define Schedule Route
-$f3->route('GET /schedule', function($f3) {
+$f3->route('POST /schedule', function($f3, $numCourses) {
     try {
-        $schedule = GraphITController::getSchedule('localhost:8080/schedule/create/3');
+
+        $numCoursesRaw = $_POST['numCourses'];
+
+        $numCourses = intval($numCoursesRaw);
+
+        $schedule = GraphITController::getSchedule('localhost:8080/schedule/create/'.$numCourses);
 
         // Check if $schedule is an array
         if (!is_array($schedule)) {
