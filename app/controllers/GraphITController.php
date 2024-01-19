@@ -45,4 +45,30 @@ class GraphITController
         curl_close($ch);
     }
 
+    public static function getSchedule(String $url): mixed
+    {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json']);
+
+        $result = curl_exec($ch);
+
+        if ($result === false) {
+            // Handle cURL error (e.g., log or return an error response)
+            $error = curl_error($ch);
+            curl_close($ch);
+            throw new \Exception('cURL request failed: ' . $error);
+        }
+
+        curl_close($ch);
+
+        error_log('Raw JSON Response: ' . $result); // Log the raw JSON response
+
+        return json_decode($result, true); // Use true to get an associative array
+    }
+
+
+
 }

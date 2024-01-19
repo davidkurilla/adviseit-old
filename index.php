@@ -66,10 +66,33 @@ $f3->route('GET /advisor', function() {
 });
 
 // Define Schedule Route
-$f3->route('GET /schedule', function() {
-    $view = new Template();
-    echo $view->render('app/views/schedule.html');
+$f3->route('GET /schedule', function($f3) {
+    try {
+        $schedule = GraphITController::getSchedule('localhost:8080/schedule/create/3');
+
+        // Check if $schedule is an array
+        if (!is_array($schedule)) {
+            throw new \Exception('Invalid schedule format. Expected JSON-encoded string.');
+        }
+
+        // Before setting the schedule variable
+        error_log('Schedule Data: ' . print_r($schedule, true));
+
+        $f3->set('schedule', $schedule);
+
+        // After setting the schedule variable
+        error_log('Schedule Variable Set');
+
+        $view = new Template();
+        echo $view->render('app/views/schedule.html');
+    } catch (\Exception $e) {
+        // Handle the exception (log, display an error page, etc.)
+        // For now, just echoing the error message
+        echo 'Error: ' . $e->getMessage();
+    }
 });
+
+
 
 
 // Run Fat Free Framework
