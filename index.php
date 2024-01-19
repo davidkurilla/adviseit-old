@@ -65,5 +65,12 @@ $f3->route('GET /advisor', function() {
     echo $view->render('app/views/advisor.html');
 });
 
+// Define Schedule Route
+$f3->route('GET /schedule', function() {
+    $view = new Template();
+    echo $view->render('app/views/schedule.html');
+});
+
+
 // Run Fat Free Framework
 $f3->run();
