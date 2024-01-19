@@ -17,7 +17,7 @@ $f3->route('GET /', function() {
 });
 
 // Define AllCourses route
-$f3->route('GET /courses/all', function($f3)
+$f3->route('GET /courses', function($f3)
 {
     $courses = GraphITController::getAllCourses("localhost:8080/courses/read/all");
     $f3->set('courses', $courses);
