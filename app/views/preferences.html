@@ -1,18 +1,23 @@
 <include href="app/views/templates/header.html"></include>
 <include href="app/views/templates/navbar.html"></include>
-<div class="container">
+<div class="container p-3">
     <h1>Submit New Class Preferences</h1>
-    <form action="{{@BASE}}/schedule" method="post">
-        <select name="numCourses" class="mb-3 form-select" aria-label="Default select example">
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="summerQuarterCheck" name="summerQuarterCheck">
-            <label class="form-check-label" for="summerQuarterCheck">Attending Summer Quarter</label>
+        <div class="card">
+            <div class="card-body">
+                <form action="{{@BASE}}/schedule" method="post">
+                    <label for="numCourses">Courses Per Quarter</label>
+                    <select id="numCourses" name="numCourses" class="mb-3 form-select" aria-label="Default select">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="summerQuarterCheck" name="summerQuarterCheck">
+                        <label class="form-check-label" for="summerQuarterCheck">Attending Summer Quarter</label>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 </div>
 <include href="app/views/templates/footer.html"></include>

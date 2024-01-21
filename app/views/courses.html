@@ -3,15 +3,10 @@
 <div class="container-fluid">
     <h1>All Courses</h1>
     <ul>
-        <repeat group="{{@courses}}" key="{{@ikey}}" value="@ivalue">
-            <repeat group="{{@ivalue}}" value="@course">
-                <li>{{@course}}</li>
-            </repeat>
+        <repeat group="{{@courses}}" value="@courses">
+            <li>{{@courses->title}}</li>
         </repeat>
     </ul>
-
-    <!--Generate schedule button -->
-    <a class="btn graphit-logo-yellow" href="{{@BASE}}/schedule">Generate Schedule</a>
 
 </div>
 <include href="app/views/templates/footer.html"></include>
