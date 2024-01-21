@@ -73,6 +73,16 @@ $f3->route('POST /schedule', function($f3, $numCourses) {
 
         $numCourses = intval($numCoursesRaw);
 
+        //check if summer button is pushed
+        /*
+        if(isset($_POST['summerQuarterCheck'])){
+            $attendingSummer = true;
+        } else {
+            $attendingSummer = false;
+        }
+        */
+        $attendingSummer = $_POST['summerQuarterCheck'] ?? "off";
+
         $schedule = GraphITController::getSchedule('localhost:8080/schedule/create/'.$numCourses);
 
         // Check if $schedule is an array
